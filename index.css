@@ -145,9 +145,12 @@ a {
 
 .section-title {
   padding-top: 30px;
-  position: relative;
-  right: -97%;
-  width: 12%;
+  /* display: flex; */
+  float: right;
+  /* align-items: end; */
+  /* position: relative; */
+  /* right: -97%; */
+  /* width: 12%; */
 }
 
 .heading-education {
@@ -253,6 +256,81 @@ a {
 
 /* Projects */
 
+/*--------------------------------------------------------------
+# Our Projects Section
+--------------------------------------------------------------*/
+
+
+.card-container {
+  flex: 300px;
+  margin: 30px;
+}
+.card-container .card {
+  font-weight: bold;
+  position: relative;
+  width: 100%;
+}
+.card-container .card a {
+  padding: 30px;
+  width: 100%;
+  height: 400px;
+  border: 2px solid black;
+  background: white;
+  text-decoration: none;
+  color: black;
+  display: block;
+  transition: 0.25s ease;
+}
+.card-container .card a:hover {
+  transform: translate(-30px, -30px);
+  border-color: #5bc0eb;
+}
+.card-container .card a:hover .card--display {
+  display: none;
+}
+.card-container .card a:hover .card--hover {
+  display: block;
+}
+.card-container .card a .card--display i {
+  font-size: 60px;
+  margin-top: 200px;
+}
+.card-container .card a .card--display h2 {
+  margin: 20px 0 0;
+}
+.card-container .card a .card--hover {
+  display: none;
+}
+.card-container .card a .card--hover h2 {
+  margin: 20px 0;
+}
+.card-container .card a .card--hover p {
+  font-weight: normal;
+  line-height: 1.5;
+}
+.card-container .card a .card--hover p.link {
+  margin: 20px 0 0;
+  font-weight: bold;
+  color: #5bc0eb;
+}
+.card-container .card .card--border {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border: 2px dashed black;
+  z-index: -1;
+}
+.card-container .card.card--dark a {
+  color: white;
+  background-color: black;
+  border-color: black;
+}
+.card-container .card.card--dark a .card--hover .link {
+  color: #fde74c;
+}
+
 /* Certificates */
 
 .certs {
@@ -268,74 +346,79 @@ a {
   position: relative;
   left: 58rem;
 }
-/* hardware accelatator class */
-.trans3d {
-  -webkit-transform-style: preserve-3d;
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform-style: preserve-3d;
-  -moz-transform: translate3d(0, 0, 0);
-  -ms-transform-style: preserve-3d;
-  -ms-transform: translate3d(0, 0, 0);
-  transform-style: preserve-3d;
-  transform: translate3d(0, 0, 0);
 
-  /* -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility:hidden;
-  backface-visibility:hidden; */
-}
-
-#contentContainer {
-  /* position: absolute; */
-  /* margin-left: -500px; */
-  /* margin-top: -500px; */
-  /* left: 50%; */
-  /* top: 50%; */
-  /* width: 1000px; */
-  /* height: 1000px; */
-  scale: 1;
-  display: flex;
-  justify-content: center;
-  /* align-items: center; */
-  height: 500px;
-  rotate: 10deg;
-}
-
-#carouselContainer {
-  /* position: absolute;
-  margin-left: -500px;
-  margin-top: -500px;
-  left: 50%;
-  top: 50%;
-  width: 1000px;
-  height: 1000px; */
-}
-
-.carouselItem {
+.container-carousel {
+  position: relative;
   width: 320px;
-  height: 130px;
-  position: absolute;  
-  left: 50%;
-  top: 50%;
-  margin-left: -160px;
-  margin-top: -90px;
-  visibility: hidden;
+  margin: 100px auto 0 auto;
+  perspective: 1000px;
 }
 
-.carouselItemInner {
-  width: 320px;
-  height: 130px;
+.carousel {
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.75);
-  border: 10px solid rgba(255, 255, 255, 0.5);
-  color: aqua;
-  font-size: 72px;
-  left: 50%;
-  top: 50%;
-  margin-left: -160px;
-  margin-top: -90px;
-  text-align: center;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d; 
+  animation: rotate360 60s infinite forwards linear;
 }
+.carousel__face { 
+  position: absolute;
+  width: 300px;
+  height: 187px;
+  top: 20px;
+  left: 10px;
+  right: 10px;
+  background-size: cover;
+  box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.5);
+  display: flex;
+  overflow: hidden;
+}
+
+.span-caro {
+  margin: auto;
+  font-size: 2rem;
+}
+
+
+.carousel__face:nth-child(1) {
+  background-image: url("https://images.pexels.com/photos/1141853/pexels-photo-1141853.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(  0deg) translateZ(430px); }
+.carousel__face:nth-child(2) { 
+  background-image: url("https://images.pexels.com/photos/1258865/pexels-photo-1258865.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    transform: rotateY( 40deg) translateZ(430px); }
+.carousel__face:nth-child(3) {
+  background-image: url("https://images.pexels.com/photos/808466/pexels-photo-808466.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY( 80deg) translateZ(430px); }
+.carousel__face:nth-child(4) {
+  background-image: url("https://images.pexels.com/photos/1394841/pexels-photo-1394841.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(120deg) translateZ(430px); }
+.carousel__face:nth-child(5) { 
+  background-image: url("https://images.pexels.com/photos/969679/pexels-photo-969679.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+ transform: rotateY(160deg) translateZ(430px); }
+.carousel__face:nth-child(6) { 
+  background-image: url("https://images.pexels.com/photos/1834400/pexels-photo-1834400.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+ transform: rotateY(200deg) translateZ(430px); }
+.carousel__face:nth-child(7) { 
+  background-image: url("https://images.pexels.com/photos/1415268/pexels-photo-1415268.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+ transform: rotateY(240deg) translateZ(430px); }
+.carousel__face:nth-child(8) {
+  background-image: url("https://images.pexels.com/photos/135018/pexels-photo-135018.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(280deg) translateZ(430px); }
+.carousel__face:nth-child(9) {
+  background-image: url("https://images.pexels.com/photos/1175135/pexels-photo-1175135.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  transform: rotateY(320deg) translateZ(430px); }
+
+
+
+@keyframes rotate360 {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-360deg);
+  }
+}
+
 
 /* Creative Side */
 #creative-side {
@@ -348,8 +431,8 @@ a {
   color: #66fcf1;
   font-size: 70px;
   padding-top: 30px;
-  position: relative;
-  right: 28.5%;
+  /* position: relative; */
+  /* right: 28.5%; */
 }
 .animation {
   /* height: 100vh; */
@@ -363,6 +446,8 @@ a {
   position: absolute;
   top: 50%;
   left: 0%;
+  z-index: 9;
+  overflow: hidden;
 }
 
 .painting {
@@ -370,6 +455,13 @@ a {
   position: relative;
   top: -6rem;
   margin-bottom: -8rem;
+}
+
+.creative-img{
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+
 }
 
 /* Contact Me */
@@ -589,8 +681,8 @@ ul li a:hover {
     margin-bottom: 3rem;
   }
   .line {
-    margin-left: 2rem;
-    width: 490px;
+    margin-left: 0rem;
+    width: 460px;
   }
   .typing-animation .text {
     margin-right: -1rem;
