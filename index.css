@@ -286,29 +286,35 @@ a {
 }
 
 #contentContainer {
-  position: absolute;
-  margin-left: -500px;
-  margin-top: -500px;
-  left: 50%;
-  top: 50%;
-  width: 1000px;
-  height: 1000px;
+  /* position: absolute; */
+  /* margin-left: -500px; */
+  /* margin-top: -500px; */
+  /* left: 50%; */
+  /* top: 50%; */
+  /* width: 1000px; */
+  /* height: 1000px; */
+  scale: 1;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  height: 500px;
+  rotate: 10deg;
 }
 
 #carouselContainer {
-  position: absolute;
+  /* position: absolute;
   margin-left: -500px;
   margin-top: -500px;
   left: 50%;
   top: 50%;
   width: 1000px;
-  height: 1000px;
+  height: 1000px; */
 }
 
 .carouselItem {
   width: 320px;
   height: 130px;
-  position: absolute;
+  position: absolute;  
   left: 50%;
   top: 50%;
   margin-left: -160px;
